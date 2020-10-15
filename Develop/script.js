@@ -9,9 +9,20 @@ let lowerCase= "abcdefghijklmnopqrstuvwxyz";
 
 var passwordLength = prompt("How many characters do you want in your password? (Must be between 8 - 128)");
 
-if (passwordLength < 8 || passwordLength > 128) {
+
+if (passwordLength >= 8 && passwordLength <= 128) {
+  var confirmChar = confirm("Do you want to include special characters?");
+  var confirmNum = confirm("Do you want to include numbers?");
+  var confirmUpper = confirm("Do you want to include uppercase letter?");
+  var confirmLower = confirm("Do you want to include lower case letters?");
+  
+  if (confirmChar !== true && confirmNum !== true && confirmUpper !== true && confirmLower !== true); {
+    alert("Please refresh the page and try again. You must select at least one character type!")
+ }
+} else { 
   alert("Please refresh the page and try again. (Must be between 8 - 128)")
 }
+
 
 
 
