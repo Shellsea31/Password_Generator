@@ -8,9 +8,9 @@ let lowerCase= "abcdefghijklmnopqrstuvwxyz";
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// create a function that runs when 
+// create a function that runs when generate button is clicked
 function generatePassword () {
-  pwd = []; //random characters get added to this array
+let pwd = []; //random characters get added to this array
   // parseInt to turn string value into number value.
 let passwordLength = parseInt(prompt("How many characters do you want in your password? (Must be between 8 - 128)"));
 
@@ -44,35 +44,44 @@ if (confirmLower) {
   pwd.push(lowerCase);
 }
 
-if (passwordLength < pwd) {
+// new empty array which will contain new password strings after looping
+let newPwd = "";
+
+while (newPwd.length < passwordLength) {
   for (let i = 0; i < pwd.length; i++) {
-   console.log(`password length is ${passwordLength}, new options is ${pwd}`)
+    if (newPwd.length < passwordLength) {
+      let randomChar = Math.floor(Math.random() * pwd[i].length)
+     newPwd += pwd[i][randomChar]
+     
+    }
   }
+  
+}
+return newPwd; // send the result of the function back to its call name
 }
 
-}
 
+// Assignment Code ////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-// Assignment Code
+// this is an event listener targeting the #generate button
+// its set to when it sees the click event, it runs the function writePassword
 // this is a new variable targeting the ID generate in HTML which is the button
 let generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword);
 
-// Write password to the #password input
+
 function writePassword() {
-  let password = generatePassword();
+  // newPwd now equals "password"
+  let password = generatePassword(); 
   // this targets id password 
   let passwordText = document.querySelector("#password");
+
+// gave it the new value of newPwd/password
   passwordText.value = password;
 }
 
-// Add event listener to generate button
-// this is an event listener with is attached to the generate button
-// its set to when it sees the click event, it runs the function writePassword
-generateBtn.addEventListener("click", writePassword);
+
+
+
 
 
