@@ -1,7 +1,7 @@
 # 03 JavaScript: Password Generator
 
 ## Description
-```
+
 This week’s homework required me to generate a random password based on criteria the user has selected. I had starter code to begin with, and added to it by creating a function which ...
 
 1. Prompt and confirm to allow user to decide length of password and types of characters.
@@ -15,7 +15,6 @@ This week’s homework required me to generate a random password based on criter
 5. Return statements to stop the function from running if user does not confirm characters, or return value of new password to the function.
 
 Once the new password had been generated and returned to the function I used the given started code to match the elements in the HTML to the value of said function, therefore displaying it to the screen.
-```
 
 ## Requirements 
 
@@ -41,7 +40,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ![pass_gen](https://user-images.githubusercontent.com/70654835/96310259-e332f280-0fbb-11eb-9c32-4863d7cc7454.png)
 
- Create your own unique password [here](httphttps://shellsea31.github.io/Password_Generator/).
+ Create your own unique password [here](httphttps://shellsea31.github.io/Password_Generator/)
 
  #### Contributors
 
