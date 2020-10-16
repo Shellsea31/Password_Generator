@@ -3,61 +3,65 @@
 let char = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 let num = "0123456789";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let lowerCase= "abcdefghijklmnopqrstuvwxyz";
+let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // create a function that runs when generate button is clicked
-function generatePassword () {
-let pwd = []; //random characters get added to this array
+function generatePassword() {
+  let pwd = []; //random characters get added to this array
   // parseInt to turn string value into number value.
-let passwordLength = parseInt(prompt("How many characters do you want in your password? (Must be between 8 - 128)"));
+  let passwordLength = parseInt(prompt("How many characters do you want in your password? (Must be between 8 - 128)"));
 
-// if number not within range or not a number
-if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-  alert ("Please try again. (Must be a number between 8 - 128)");
-  generatePassword();
-} 
-
-// ask to confirm different arrays. 
-let confirmChar = confirm("Do you want to include special characters?");
-let confirmNum = confirm("Do you want to include numbers?");
-let confirmUpper = confirm("Do you want to include uppercase letter?");
-let confirmLower = confirm("Do you want to include lower case letters?");
-
-
-// If confirmed, push values into new array called pwd
-if (confirmChar) {
-  pwd.push(char);
-}
-
-if (confirmNum) {
-  pwd.push(num);
-}  
-
-if (confirmUpper) {
-  pwd.push(upperCase);
-}
-
-if (confirmLower) {
-  pwd.push(lowerCase);
-}
-
-// new empty array which will contain new password strings after looping
-let newPwd = "";
-
-while (newPwd.length < passwordLength) {
-  for (let i = 0; i < pwd.length; i++) {
-    if (newPwd.length < passwordLength) {
-      let randomChar = Math.floor(Math.random() * pwd[i].length)
-     newPwd += pwd[i][randomChar]
-     
-    }
+  // if number not within range or not a number
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    alert("Please try again. (Must be a number between 8 - 128)");
+    generatePassword();
   }
-  
-}
-return newPwd; // send the result of the function back to its call name
+
+  // ask to confirm different arrays. 
+  let confirmChar = confirm("Do you want to include special characters?");
+  let confirmNum = confirm("Do you want to include numbers?");
+  let confirmUpper = confirm("Do you want to include uppercase letter?");
+  let confirmLower = confirm("Do you want to include lower case letters?");
+
+  if (confirmChar === false && confirmNum === false && confirmUpper === false && confirmLower === false) {
+    alert("Do you want a password or nah?");
+    return;
+  }
+
+  // If confirmed, push values into new array called pwd
+  if (confirmChar) {
+    pwd.push(char);
+  }
+
+  if (confirmNum) {
+    pwd.push(num);
+  }
+
+  if (confirmUpper) {
+    pwd.push(upperCase);
+  }
+
+  if (confirmLower) {
+    pwd.push(lowerCase);
+  }
+
+  // new empty array which will contain new password strings after looping
+  let newPwd = "";
+
+  while (newPwd.length < passwordLength) {
+    for (let i = 0; i < pwd.length; i++) {
+      if (newPwd.length < passwordLength) {
+        let randomChar = Math.floor(Math.random() * pwd[i].length)
+        newPwd += pwd[i][randomChar]
+
+      }
+    }
+
+  }
+  return newPwd; // send the result of the function back to its call name
 }
 
 
@@ -72,16 +76,10 @@ generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
   // newPwd now equals "password"
-  let password = generatePassword(); 
+  let password = generatePassword();
   // this targets id password 
   let passwordText = document.querySelector("#password");
 
-// gave it the new value of newPwd/password
+  // gave it the new value of newPwd/password
   passwordText.value = password;
 }
-
-
-
-
-
-
