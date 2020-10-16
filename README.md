@@ -20,7 +20,7 @@ Once the new password had been generated and returned to the function I used the
 
 ![pass_gen](https://user-images.githubusercontent.com/70654835/96310259-e332f280-0fbb-11eb-9c32-4863d7cc7454.png)
 
-Create your own unique password by clicking [here] (https://shellsea31.github.io/Password_Generator/)
+Create your own unique password by clicking [here](https://shellsea31.github.io/Password_Generator/)
 
  #### Contributors
 
