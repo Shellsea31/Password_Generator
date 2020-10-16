@@ -5,28 +5,56 @@ let num = "0123456789";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCase= "abcdefghijklmnopqrstuvwxyz";
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
+// create a function that runs when 
+function generatePassword () {
+  pwd = []; //random characters get added to this array
+  // parseInt to turn string value into number value.
+let passwordLength = parseInt(prompt("How many characters do you want in your password? (Must be between 8 - 128)"));
 
-var passwordLength = prompt("How many characters do you want in your password? (Must be between 8 - 128)");
+// if number not within range or not a number
+if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+  alert ("Please try again. (Must be a number between 8 - 128)");
+  generatePassword();
+} 
+
+// ask to confirm different arrays. 
+let confirmChar = confirm("Do you want to include special characters?");
+let confirmNum = confirm("Do you want to include numbers?");
+let confirmUpper = confirm("Do you want to include uppercase letter?");
+let confirmLower = confirm("Do you want to include lower case letters?");
 
 
-if (passwordLength >= 8 && passwordLength <= 128) {
-  var confirmChar = confirm("Do you want to include special characters?");
-  var confirmNum = confirm("Do you want to include numbers?");
-  var confirmUpper = confirm("Do you want to include uppercase letter?");
-  var confirmLower = confirm("Do you want to include lower case letters?");
-  
-  if (confirmChar !== true && confirmNum !== true && confirmUpper !== true && confirmLower !== true); {
-    alert("Please refresh the page and try again. You must select at least one character type!")
- }
-} else { 
-  alert("Please refresh the page and try again. (Must be between 8 - 128)")
+// If confirmed, push values into new array called pwd
+if (confirmChar) {
+  pwd.push(char);
+}
+
+if (confirmNum) {
+  pwd.push(num);
+}  
+
+if (confirmUpper) {
+  pwd.push(upperCase);
+}
+
+if (confirmLower) {
+  pwd.push(lowerCase);
+}
+
+if (passwordLength < pwd) {
+  for (let i = 0; i < pwd.length; i++) {
+   console.log(`password length is ${passwordLength}, new options is ${pwd}`)
+  }
+}
+
 }
 
 
 
 
-// generatePassword =  ;//this should equal something
 
 
 
@@ -37,6 +65,7 @@ let generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
+  // this targets id password 
   let passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
