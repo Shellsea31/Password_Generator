@@ -1,4 +1,5 @@
 # Password Generator
+ <img src="https://img.shields.io/badge/LICENSE-mit-green"/>
 
 ## Description
 
@@ -17,6 +18,8 @@ This week’s homework required me to generate a random password based on criter
 Once the new password had been generated and returned to the function I used the given started code to match the elements in the HTML to the value of said function, therefore displaying it to the screen.
 
 ## Demo
+
+![shellsea31 github io_Password_Generator_](https://user-images.githubusercontent.com/70654835/99455253-72de0080-28dc-11eb-8952-39fc62626858.png)
 
 ![pass_gen](https://user-images.githubusercontent.com/70654835/96310259-e332f280-0fbb-11eb-9c32-4863d7cc7454.png)
 
